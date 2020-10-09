@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Map from './Map';
 
 class App extends React.Component {
   componentDidMount() {
@@ -19,6 +20,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
+        <Map></Map>
       </div>
     );
   }
