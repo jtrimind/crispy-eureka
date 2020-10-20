@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a5028268c069caccedb6e8a678dbe4ee",
+    "revision": "87a74a25cca21723fcbacd85d55b83f7",
     "url": "/crispy-eureka/index.html"
   },
   {
-    "revision": "1e054b2c5cd6515ec63d",
+    "revision": "e03bdc6a15a81825ab30",
     "url": "/crispy-eureka/static/css/main.187fe634.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/crispy-eureka/static/js/2.e4fac994.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1e054b2c5cd6515ec63d",
-    "url": "/crispy-eureka/static/js/main.9dc8f1cb.chunk.js"
+    "revision": "e03bdc6a15a81825ab30",
+    "url": "/crispy-eureka/static/js/main.b1793008.chunk.js"
   },
   {
     "revision": "9b774c85f4e99a8e71fb",
