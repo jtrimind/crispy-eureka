@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c4476252926a45083095c6e230a3003a",
+    "revision": "a5028268c069caccedb6e8a678dbe4ee",
     "url": "/crispy-eureka/index.html"
   },
   {
-    "revision": "8ee23cd08479c1fa3d20",
+    "revision": "1e054b2c5cd6515ec63d",
     "url": "/crispy-eureka/static/css/main.187fe634.chunk.css"
   },
   {
-    "revision": "d3775a34877568570e7c",
-    "url": "/crispy-eureka/static/js/2.cedf7d18.chunk.js"
+    "revision": "b034d80922efbbabed28",
+    "url": "/crispy-eureka/static/js/2.e4fac994.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/crispy-eureka/static/js/2.cedf7d18.chunk.js.LICENSE.txt"
+    "url": "/crispy-eureka/static/js/2.e4fac994.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8ee23cd08479c1fa3d20",
-    "url": "/crispy-eureka/static/js/main.a36603b1.chunk.js"
+    "revision": "1e054b2c5cd6515ec63d",
+    "url": "/crispy-eureka/static/js/main.9dc8f1cb.chunk.js"
   },
   {
     "revision": "9b774c85f4e99a8e71fb",
