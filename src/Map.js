@@ -1,4 +1,6 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
+import { GpsFixed } from "@material-ui/icons"
 import './Map.css';
 /*global kakao*/
 
@@ -60,7 +62,9 @@ class Map extends React.Component {
       <div>
         <div className='Map' id='map'>
         </div>
-        <button onClick={this.onLocationButton}>Current Position</button>
+        <Button onClick={this.onLocationButton}>
+          <GpsFixed />
+        </Button>
       </div>);
   }
 }
