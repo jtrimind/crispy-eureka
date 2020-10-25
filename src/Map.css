@@ -2,4 +2,10 @@
     border: 0.5rem solid;
     width:500px;
     height:400px;
+    z-index: 100;
+}
+
+.Button {
+    border: 0.5rem solid;
+    z-index: 1000;
 }
