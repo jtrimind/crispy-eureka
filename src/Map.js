@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { GpsFixed } from "@material-ui/icons"
+import { GpsFixed } from "@material-ui/icons";
 import './Map.css';
 /*global kakao*/
 

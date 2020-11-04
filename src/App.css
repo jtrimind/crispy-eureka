@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.App .Top {
+  text-align: left;
+  color: white;
+  background-color: #288cff;
+  /* border: 0.1rem solid; */
+}
