@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import InfoIcon from '@material-ui/icons/Info';
+import SearchIcon from "@material-ui/icons/Search"
 import './App.css';
 import Map from './Map';
 import Parmacy from './Parmarcy';
@@ -15,6 +16,8 @@ function App() {
         <Button>
           <InfoIcon color="primary"/>
         </Button>
+        <SearchIcon />
+        <input></input>
       </div>
       <Map onPositionChanged={(lat, lng) => {
         console.log("position changed: " + lat + ' ' + lng);
