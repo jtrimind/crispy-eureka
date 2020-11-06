@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
-import InfoIcon from '@material-ui/icons/Info';
 import SearchIcon from "@material-ui/icons/Search"
 import './App.css';
 import Map from './Map';
 import Parmacy from './Parmarcy';
+import Info from './info'
 
 function App() {
   const [latlng, setLatlng] = useState([0, 0]);
@@ -13,9 +12,7 @@ function App() {
     <div className="App">
       <div className="Top">
         당장약국
-        <Button>
-          <InfoIcon color="primary"/>
-        </Button>
+        <Info/>
         <SearchIcon />
         <input></input>
       </div>
