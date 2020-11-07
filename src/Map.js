@@ -1,7 +1,4 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import { GpsFixed } from "@material-ui/icons";
-import './Map.css';
 /*global kakao*/
 
 class Map extends React.Component {
@@ -10,7 +7,6 @@ class Map extends React.Component {
     this.state = {
       map: null,
     };
-    this.onLocationButton = this.onLocationButton.bind(this);
   }
 
   componentDidMount() {
@@ -40,32 +36,19 @@ class Map extends React.Component {
     };
   }
 
-  onLocationButton() {
-    console.log("btn click");
-    if ("geolocation" in navigator) {
-      console.log("Available");
-      navigator.geolocation.getCurrentPosition((position) => {
-        const latlng = new kakao.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        console.log("lat:" + latlng.getLat() + " lng: " + latlng.getLng());
-        this.state.map.panTo(latlng);
-        this.props.onPositionChanged(latlng.getLat(), latlng.getLng());
-      }, (error) => {
-        console.error("Error Code = " + error.code + " - " + error.message);
-      });
-    } else {
-      console.log("Not Available");
+  componentDidUpdate(prevProps) {
+    if (prevProps.latlng !== this.props.latlng) {
+      console.log("update");
+      const latlng = new kakao.maps.LatLng(this.props.latlng[0], this.props.latlng[1]);
+      this.state.map.panTo(latlng);
     }
   }
 
   render() {
     return (
-      <div>
-        <div className='Map' id='map'>
-        </div>
-        <Button onClick={this.onLocationButton}>
-          <GpsFixed />
-        </Button>
-      </div>);
+      <>
+        <div className='Map' id='map' />
+      </>);
   }
 }
 
