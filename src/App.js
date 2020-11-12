@@ -12,6 +12,12 @@ function App() {
     console.log("position changed: " + lat + ' ' + lng);
     setLatlng([lat, lng]);
   };
+
+  const [storeList, setStoreList] = useState([]);
+  const onStoreListUpdated = (list) => {
+    console.log(list);
+    setStoreList(list);
+  }
   return (
     <div className="App">
       <div className="Top">
@@ -21,9 +27,9 @@ function App() {
       </div>
       <div className="MapContent">
         <Gps onPositionChanged={onPositionChanged} />
-        <Map latlng={latlng} onPositionChanged={onPositionChanged} />
+        <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} />
       </div>
-      <Parmacy latlng={latlng} />
+      <Parmacy latlng={latlng} onStoreListUpdated={onStoreListUpdated} />
     </div>
   );
 }

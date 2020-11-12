@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from "../node_modules/@material-ui/core";
-import { GpsFixed } from "../node_modules/@material-ui/icons";
+import { Button } from "@material-ui/core";
+import { GpsFixed } from "@material-ui/icons";
 
 function Gps({ onPositionChanged }) {
   return (

@@ -1,43 +1,41 @@
 import Axios from 'axios';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-class Parmacy extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+function Parmacy ({latlng, onStoreListUpdated}) {
 
-  getList = async () => {
-    var url = 'https://congenial-spoon.web.app/pharmacy';
-    // var url = 'http://localhost:5000/pharmacy';
-    const list = await Axios.get(url, {
-      params: {
-        WGS84_LAT: this.props.latlng[0],
-        WGS84_LON: this.props.latlng[1]
+  const [storeList, setStoreList] = useState([]);
+  useEffect(() => {
+    const getStoreList = async () => {
+      var url = 'https://congenial-spoon.web.app/pharmacy';
+      // var url = 'http://localhost:5000/pharmacy';
+      const list = await Axios.get(url, {
+        params: {
+          WGS84_LAT: latlng[0],
+          WGS84_LON: latlng[1]
+        }
+      });
+      console.log(list);
+      if (list.status === 200) {
+        var items = list.data.response.body.items;
+        console.log(items);
+        if (items) {
+          const item = items.item;
+          const item_latlng = item.map(element => {
+            return [element.latitude, element.longitude];
+          });
+          console.log(item_latlng);
+          setStoreList(item_latlng);
+        }
       }
-    });
-    console.log(list);
-    console.log(list.status);
-    if (list.status === 200) {
-      var item = list.data.response.body.items.item;
-      console.log(item);
-      this.setState({list: item[0].dutyName});
-    } else {
-      this.setState({list: ""});
     }
-  }
+    getStoreList();
+  }, [latlng]);
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.latlng !== this.props.latlng) {
-      console.log("update");
-      this.getList();
-    }
-  }
-  componentDidMount = () => {
-  }
-  render() {
-    return (<div>{this.state.list ? this.state.list : "Loading"}</div>);
-  }
+  useEffect(() => {
+    onStoreListUpdated(storeList);
+  }, [storeList]);
+
+  return (<div></div>);
 }
 
 export default Parmacy;

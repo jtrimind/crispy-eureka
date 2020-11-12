@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function Map({latlng, onPositionChanged}) {
+function Map({latlng, storeList, onPositionChanged}) {
   const [kakao, setKakao] = useState(null);
   useEffect(() => {
     const script = document.createElement("script");
@@ -43,6 +43,19 @@ function Map({latlng, onPositionChanged}) {
     }
   }, [latlng]);
 
+  useEffect(() => {
+    if (map && storeList) {
+      var content = '<div class ="label"><span class="left"></span><span class="center">카카오!</span><span class="right"></span></div>';
+      storeList.forEach(store => {
+        var position = new kakao.maps.LatLng(store[0], store[1]);
+        var customOverlay = new kakao.maps.CustomOverlay({
+          content: content,
+          position: position
+        });
+        customOverlay.setMap(map);
+      });
+    }
+  }, [storeList])
   return (
     <div id='map' className='Map'/>
   );
