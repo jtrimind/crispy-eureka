@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { renderToStaticMarkup } from "react-dom/server"
+import Shop from './Shop';
 
 function Map({latlng, storeList, onPositionChanged}) {
   const [kakao, setKakao] = useState(null);
@@ -45,11 +47,10 @@ function Map({latlng, storeList, onPositionChanged}) {
 
   useEffect(() => {
     if (map && storeList) {
-      var content = '<div class ="label"><span class="left"></span><span class="center">카카오!</span><span class="right"></span></div>';
       storeList.forEach(store => {
-        var position = new kakao.maps.LatLng(store[0], store[1]);
+        var position = new kakao.maps.LatLng(store.latlng[0], store.latlng[1]);
         var customOverlay = new kakao.maps.CustomOverlay({
-          content: content,
+          content: renderToStaticMarkup(<Shop name={store.name} />),
           position: position
         });
         customOverlay.setMap(map);

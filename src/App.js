@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Map from './Map';
-import Parmacy from './Parmarcy';
+import Pharmacy from './Pharmarcy';
 import Info from './info';
 import Search from './Search';
 import Gps from './Gps';
@@ -15,7 +15,6 @@ function App() {
 
   const [storeList, setStoreList] = useState([]);
   const onStoreListUpdated = (list) => {
-    console.log(list);
     setStoreList(list);
   }
   return (
@@ -29,7 +28,7 @@ function App() {
         <Gps onPositionChanged={onPositionChanged} />
         <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} />
       </div>
-      <Parmacy latlng={latlng} onStoreListUpdated={onStoreListUpdated} />
+      <Pharmacy latlng={latlng} onStoreListUpdated={onStoreListUpdated} />
     </div>
   );
 }

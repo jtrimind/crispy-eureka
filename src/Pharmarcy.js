@@ -1,7 +1,7 @@
 import Axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-function Parmacy ({latlng, onStoreListUpdated}) {
+function Pharmacy ({latlng, onStoreListUpdated}) {
 
   const [storeList, setStoreList] = useState([]);
   useEffect(() => {
@@ -21,7 +21,11 @@ function Parmacy ({latlng, onStoreListUpdated}) {
         if (items) {
           const item = items.item;
           const item_latlng = item.map(element => {
-            return [element.latitude, element.longitude];
+            var shopElement = {
+              name: element.dutyName,
+              latlng: [element.latitude, element.longitude],
+            }
+            return shopElement;
           });
           console.log(item_latlng);
           setStoreList(item_latlng);
@@ -38,4 +42,4 @@ function Parmacy ({latlng, onStoreListUpdated}) {
   return (<div></div>);
 }
 
-export default Parmacy;
+export default Pharmacy;
