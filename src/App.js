@@ -5,6 +5,8 @@ import Pharmacy from './Pharmarcy';
 import Info from './info';
 import Search from './Search';
 import Gps from './Gps';
+import { Button } from '@material-ui/core';
+import { Autorenew } from '@material-ui/icons';
 
 function App() {
   const [latlng, setLatlng] = useState([37, 127]);
@@ -25,7 +27,14 @@ function App() {
         <Search />
       </div>
       <div className="MapContent">
-        <Gps onPositionChanged={onPositionChanged} />
+        <div className="MapControl">
+          <Gps onPositionChanged={onPositionChanged} />
+          <div className="Renew">
+            <Button>
+              <Autorenew></Autorenew>
+            </Button>
+          </div>
+        </div>
         <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} />
       </div>
       <Pharmacy latlng={latlng} onStoreListUpdated={onStoreListUpdated} />

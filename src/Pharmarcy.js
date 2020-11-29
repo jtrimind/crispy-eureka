@@ -6,8 +6,8 @@ function Pharmacy ({latlng, onStoreListUpdated}) {
   const [storeList, setStoreList] = useState([]);
   useEffect(() => {
     const getStoreList = async () => {
-      var url = 'https://congenial-spoon.web.app/pharmacy';
-      // var url = 'http://localhost:5000/pharmacy';
+      // var url = 'https://congenial-spoon.web.app/pharmacy';
+      var url = 'http://localhost:5000/pharmacy';
       const list = await Axios.get(url, {
         params: {
           WGS84_LAT: latlng[0],
