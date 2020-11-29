@@ -37,3 +37,8 @@
   z-index: 2;
   float: right;
 }
+
+.MapControl button {
+  margin: 0.1rem;
+  background-color: #288cff;
+}

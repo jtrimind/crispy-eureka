@@ -6,7 +6,7 @@ import Info from './info';
 import SearchBar from './SearchBar';
 import Gps from './Gps';
 import { Button } from '@material-ui/core';
-import { Autorenew } from '@material-ui/icons';
+import { Autorenew, FilterList } from '@material-ui/icons';
 
 function App() {
   const [latlng, setLatlng] = useState([37, 127]);
@@ -34,6 +34,9 @@ function App() {
               <Autorenew></Autorenew>
             </Button>
           </div>
+          <Button>
+            <FilterList/>
+          </Button>
         </div>
         <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} />
       </div>
