@@ -3,7 +3,7 @@ import './App.css';
 import Map from './Map';
 import Pharmacy from './Pharmarcy';
 import Info from './info';
-import Search from './Search';
+import SearchBar from './SearchBar';
 import Gps from './Gps';
 import { Button } from '@material-ui/core';
 import { Autorenew } from '@material-ui/icons';
@@ -24,7 +24,7 @@ function App() {
       <div className="Top">
         당장약국
         <Info />
-        <Search />
+        <SearchBar />
       </div>
       <div className="MapContent">
         <div className="MapControl">
