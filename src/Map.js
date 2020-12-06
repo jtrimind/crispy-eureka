@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { renderToStaticMarkup } from "react-dom/server"
 import Shop from './Shop';
 
-function Map({latlng, storeList, onPositionChanged}) {
+function Map({latlng, storeList, onPositionChanged, keyword}) {
   const [kakao, setKakao] = useState(null);
   useEffect(() => {
     const script = document.createElement("script");
@@ -57,6 +57,12 @@ function Map({latlng, storeList, onPositionChanged}) {
       });
     }
   }, [storeList])
+
+  useEffect(() => {
+    if (keyword) {
+      console.log("keyword ", keyword);
+    }
+  }, [keyword])
   return (
     <div id='map' className='Map'/>
   );

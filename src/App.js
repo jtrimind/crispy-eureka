@@ -19,12 +19,15 @@ function App() {
   const onStoreListUpdated = (list) => {
     setStoreList(list);
   }
+
+  const [keyword, setKeyword] = useState("");
+
   return (
     <div className="App">
       <div className="Top">
         당장약국
         <Info />
-        <SearchBar />
+        <SearchBar onSearch={setKeyword} />
       </div>
       <div className="MapContent">
         <div className="MapControl">
@@ -38,7 +41,7 @@ function App() {
             <FilterList/>
           </Button>
         </div>
-        <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} />
+        <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} keyword={keyword} />
       </div>
       <Pharmacy latlng={latlng} onStoreListUpdated={onStoreListUpdated} />
     </div>
