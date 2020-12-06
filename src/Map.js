@@ -22,7 +22,7 @@ function Map({latlng, storeList, onPositionChanged, keyword, gps}) {
         let container = document.getElementById("map");
         let options = {
           center: new kakao.maps.LatLng(latlng[0], latlng[1]),
-          level: 7
+          level: 5
         };
 
         setMap(new kakao.maps.Map(container, options));
@@ -35,6 +35,13 @@ function Map({latlng, storeList, onPositionChanged, keyword, gps}) {
       kakao.maps.event.addListener(map, 'dragend', () => {
         const center = map.getCenter();
         onPositionChanged(center.getLat(), center.getLng());
+      });
+
+      kakao.maps.event.addListener(map, 'zoom_changed', function () {
+        const level = map.getLevel();
+        if (level > 5) {
+          map.setLevel(5)
+        }
       });
     }
   }, [map])
