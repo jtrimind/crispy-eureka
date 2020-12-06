@@ -32,7 +32,10 @@ function Pharmacy ({latlng, onStoreListUpdated}) {
         }
       }
     }
-    getStoreList();
+    getStoreList()
+    .catch(error => {
+      console.log(error);
+    });
   }, [latlng]);
 
   useEffect(() => {
