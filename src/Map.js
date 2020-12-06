@@ -8,7 +8,7 @@ function Map({latlng, storeList, onPositionChanged, keyword}) {
     const script = document.createElement("script");
     script.async = true;
     script.src =
-      "https://dapi.kakao.com/v2/maps/sdk.js?appkey=f5185fb09b4ee9df57bd6b168585bb8c&autoload=false";
+      "https://dapi.kakao.com/v2/maps/sdk.js?appkey=f5185fb09b4ee9df57bd6b168585bb8c&libraries=services&autoload=false";
     document.head.appendChild(script);
     script.onload = () => {
       setKakao(window.kakao);
@@ -60,9 +60,22 @@ function Map({latlng, storeList, onPositionChanged, keyword}) {
 
   useEffect(() => {
     if (keyword) {
-      console.log("keyword ", keyword);
+      console.log("keyword:", keyword);
+      const places = new kakao.maps.services.Places();
+      places.keywordSearch(keyword, (result, status) => {
+        console.log(status)
+        console.log(result)
+        if (status === kakao.maps.services.Status.OK) {
+          const {y, x} = result[0];
+          console.log(y, x);
+          const moveLatLng = new kakao.maps.LatLng(y, x);
+          map.panTo(moveLatLng);
+          map.setLevel(3);
+        }
+      })
     }
   }, [keyword])
+
   return (
     <div id='map' className='Map'/>
   );
