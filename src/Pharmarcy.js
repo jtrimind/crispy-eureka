@@ -11,7 +11,8 @@ function Pharmacy ({latlng, onStoreListUpdated}) {
       const list = await Axios.get(url, {
         params: {
           WGS84_LAT: latlng[0],
-          WGS84_LON: latlng[1]
+          WGS84_LON: latlng[1],
+          numOfRows: 30
         }
       });
       console.log(list);
