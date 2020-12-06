@@ -39,9 +39,6 @@ function App() {
               <Autorenew></Autorenew>
             </Button>
           </div>
-          <Button>
-            <FilterList/>
-          </Button>
         </div>
         <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} keyword={keyword} gps={gps} />
       </div>
