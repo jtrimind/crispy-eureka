@@ -24,6 +24,8 @@ function App() {
 
   const [gps, setGps] = useState();
 
+  const [renew, setRenew] = useState(false);
+
   return (
     <div className="App">
       <div className="Top">
@@ -35,14 +37,16 @@ function App() {
         <div className="MapControl">
           <Gps setLatlng={setLatlng} setGps={setGps} />
           <div className="Renew">
-            <Button>
+            <Button onClick={() => {
+              setRenew(true);
+            }}>
               <Autorenew></Autorenew>
             </Button>
           </div>
         </div>
         <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} keyword={keyword} gps={gps} />
       </div>
-      <Pharmacy latlng={latlng} onStoreListUpdated={onStoreListUpdated} />
+      <Pharmacy latlng={latlng} onStoreListUpdated={onStoreListUpdated} renew={renew} setRenew={setRenew} />
     </div>
   );
 }
