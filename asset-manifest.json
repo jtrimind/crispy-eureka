@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/crispy-eureka/static/css/main.b834de0b.chunk.css",
+    "main.css": "/crispy-eureka/static/css/main.f7c64a79.chunk.css",
     "main.js": "/crispy-eureka/static/js/main.694c7be1.chunk.js",
     "main.js.map": "/crispy-eureka/static/js/main.694c7be1.chunk.js.map",
     "runtime-main.js": "/crispy-eureka/static/js/runtime-main.200b8f29.js",
@@ -8,13 +8,13 @@
     "static/js/2.2106e795.chunk.js": "/crispy-eureka/static/js/2.2106e795.chunk.js",
     "static/js/2.2106e795.chunk.js.map": "/crispy-eureka/static/js/2.2106e795.chunk.js.map",
     "index.html": "/crispy-eureka/index.html",
-    "static/css/main.b834de0b.chunk.css.map": "/crispy-eureka/static/css/main.b834de0b.chunk.css.map",
+    "static/css/main.f7c64a79.chunk.css.map": "/crispy-eureka/static/css/main.f7c64a79.chunk.css.map",
     "static/js/2.2106e795.chunk.js.LICENSE.txt": "/crispy-eureka/static/js/2.2106e795.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.200b8f29.js",
     "static/js/2.2106e795.chunk.js",
-    "static/css/main.b834de0b.chunk.css",
+    "static/css/main.f7c64a79.chunk.css",
     "static/js/main.694c7be1.chunk.js"
   ]
 }
