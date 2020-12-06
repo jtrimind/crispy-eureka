@@ -2,13 +2,14 @@ import React from 'react';
 import { Button } from "@material-ui/core";
 import { GpsFixed } from "@material-ui/icons";
 
-function Gps({ onPositionChanged }) {
+function Gps({ setLatlng, setGps }) {
   return (
     <div className='Gps'>
       <Button onClick={() => {
         if ("geolocation" in navigator) {
           navigator.geolocation.getCurrentPosition((position) => {
-            onPositionChanged(position.coords.latitude, position.coords.longitude);
+            setLatlng([position.coords.latitude, position.coords.longitude]);
+            setGps([position.coords.latitude, position.coords.longitude]);
           }, (error) => {
             console.error("Error Code = " + error.code + " - " + error.message);
           });

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { renderToStaticMarkup } from "react-dom/server"
 import Shop from './Shop';
 
-function Map({latlng, storeList, onPositionChanged, keyword}) {
+function Map({latlng, storeList, onPositionChanged, keyword, gps}) {
   const [kakao, setKakao] = useState(null);
   useEffect(() => {
     const script = document.createElement("script");
@@ -75,6 +75,22 @@ function Map({latlng, storeList, onPositionChanged, keyword}) {
       })
     }
   }, [keyword])
+
+  useEffect(() => {
+    if (gps) {
+      console.log("gps:", gps);
+      const imageSize = new kakao.maps.Size(24, 35);
+      const imageSrc = "http://t1.daumcdn.net/localimg/localimages/07/2018/pc/img/marker_spot.png";
+      const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+      var position = new kakao.maps.LatLng(gps[0], gps[1]);
+      var marker = new kakao.maps.Marker({
+        map: map,
+        position: position,
+        image: markerImage
+      });
+      marker.setMap(map);
+    }
+  }, [gps])
 
   return (
     <div id='map' className='Map'/>

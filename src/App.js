@@ -22,6 +22,8 @@ function App() {
 
   const [keyword, setKeyword] = useState("");
 
+  const [gps, setGps] = useState();
+
   return (
     <div className="App">
       <div className="Top">
@@ -31,7 +33,7 @@ function App() {
       </div>
       <div className="MapContent">
         <div className="MapControl">
-          <Gps onPositionChanged={onPositionChanged} />
+          <Gps setLatlng={setLatlng} setGps={setGps} />
           <div className="Renew">
             <Button>
               <Autorenew></Autorenew>
@@ -41,7 +43,7 @@ function App() {
             <FilterList/>
           </Button>
         </div>
-        <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} keyword={keyword} />
+        <Map latlng={latlng} onPositionChanged={onPositionChanged} storeList={storeList} keyword={keyword} gps={gps} />
       </div>
       <Pharmacy latlng={latlng} onStoreListUpdated={onStoreListUpdated} />
     </div>
