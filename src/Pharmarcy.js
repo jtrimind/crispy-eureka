@@ -24,6 +24,10 @@ function Pharmacy ({latlng, onStoreListUpdated, renew, setRenew}) {
         const item_latlng = item.map(element => {
           var shopElement = {
             name: element.dutyName,
+            tel: element.dutyTel1,
+            startTime: element.startTime,
+            endTime: element.endTime,
+            addr: element.dutyAddr,
             latlng: [element.latitude, element.longitude],
           }
           return shopElement;

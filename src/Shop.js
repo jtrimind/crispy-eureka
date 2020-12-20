@@ -2,13 +2,21 @@ import React from 'react';
 import { renderToStaticMarkup } from "react-dom/server"
 import Icon from '@mdi/react'
 import { mdiPill } from '@mdi/js';
-import { Card } from '@material-ui/core';
+import { Card, Typography } from '@material-ui/core';
 
 
-const Shop = ({ name }) => {
+const Shop = ({ name, tel, startTime, endTime, addr }) => {
   const Tooltip = () => (
     <Card>
-      {name}
+      <Typography>
+        {name}
+      </Typography>
+      <ul>
+        <li>전화번호: {tel}</li>
+        <li>영업시간: {startTime} ~ {endTime}</li>
+        <li>주소: {addr}</li>
+      </ul>
+      <br/>
     </Card>
   )
 

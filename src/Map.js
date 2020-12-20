@@ -58,7 +58,7 @@ function Map({latlng, storeList, onPositionChanged, keyword, gps}) {
       storeList.forEach(store => {
         var position = new kakao.maps.LatLng(store.latlng[0], store.latlng[1]);
         var customOverlay = new kakao.maps.CustomOverlay({
-          content: renderToStaticMarkup(<Shop name={store.name} />),
+          content: renderToStaticMarkup(<Shop name={store.name} tel={store.tel} startTime={store.startTime} endTime={store.endTime} addr={store.addr}/>),
           position: position
         });
         customOverlay.setMap(map);
