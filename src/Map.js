@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { renderToStaticMarkup } from "react-dom/server"
+import tippy from 'tippy.js';
 import Shop from './Shop';
 
 function Map({latlng, storeList, onPositionChanged, keyword, gps}) {
@@ -61,6 +62,12 @@ function Map({latlng, storeList, onPositionChanged, keyword, gps}) {
           position: position
         });
         customOverlay.setMap(map);
+
+        tippy("[data-tippy-content]", {
+          trigger: 'click',
+          hideOnClick: true,
+          allowHTML: true
+        });
       });
     }
   }, [storeList])
